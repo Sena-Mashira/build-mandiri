@@ -1,14 +1,24 @@
 #include <stdio.h>
+#include <strings.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
 
 int main() {
-    int input[10];
-    int output = -1000;
+
+    char firstWord[100];
+    char secondWord[100];
     
-    for (int i = 0; i < 10; i++) {
-     scanf("%d", &input[i]);
-     input[i] > output ? output = input[i] : 0; 
+    scanf("%s", firstWord);
+    scanf("%s", secondWord);
+    
+    int compare = strcasecmp(firstWord, secondWord);
+    
+    if (compare == 0) {
+        int secCompare = strcmp(firstWord, secondWord);
+        secCompare == 0 ? printf("IDENTIK") : printf("MIRIP");
+    } else {
+        printf("BERBEDA");
     }
-    
-    printf("%d", output);
     return 0;
 }
